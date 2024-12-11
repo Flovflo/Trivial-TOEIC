@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "type": "choix",
+    "question": "'She ____ to the office every day.'",
+    "options": ["go", "goes", "going", "gone"],
+    "correctAnswer": "goes",
+    "explanation": "The subject 'she' requires the conjugated present simple form: 'she goes'."
+  },
+  {
+    "id": 2,
+    "type": "choix",
+    "question": "'They ____ the report yesterday.'",
+    "options": ["finished", "finishing", "finish", "finishes"],
+    "correctAnswer": "finished",
+    "explanation": "The subject 'they' requires the past simple form: 'finished'."
+  }
+]
