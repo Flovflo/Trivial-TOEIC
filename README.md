@@ -15,6 +15,6 @@ This is a simple quiz application built with React. Users can answer multiple-ch
 ## Installation
 
 Run : 
-```bash
+   ```bash
    ect sudo docker-compose up --build
    ````
