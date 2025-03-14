@@ -1,83 +1,79 @@
+/* Police système et fond spatial */
 body {
-  font-family: Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f7faff;
+  background: linear-gradient(135deg, #1c1c1e, #2c2c2e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #f2f2f7;
 }
 
+/* Conteneur principal inspiré de VisionOS */
 .quiz-container {
+  width: 90%;
   max-width: 600px;
   margin: 20px auto;
-  padding: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 30px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
 }
 
+/* Titres */
 h1 {
-  text-align: center;
-  color: #191D63;
+  margin-bottom: 25px;
+  font-size: 2.2em;
+  font-weight: 600;
 }
 
 h2 {
   margin-bottom: 20px;
+  font-size: 1.6em;
+  font-weight: 500;
 }
 
+/* Options de réponses */
 .options-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
+  margin-top: 20px;
 }
 
 .option-button {
-  padding: 10px;
-  background: #f1f1f1;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 14px 22px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  font-size: 1em;
+  color: #f2f2f7;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .option-button:hover {
-  background: #31CD63;
-  color: white;
-}
-
-.completion-message {
-  text-align: center;
-  font-size: 1.5em;
-  color: #4a90e2;
-}
-
-.option-button {
-  padding: 10px;
-  background: #f1f1f1;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.option-button:hover {
-  background: #4a90e2;
-  color: white;
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
 }
 
 .option-button.correct {
-  background: #4caf50;
-  border-color: #4caf50;
-  color: white;
+  background: rgba(52, 199, 89, 0.8); /* systemGreen */
 }
 
 .option-button.selected {
-  background: #ffc107;
-  border-color: #ffc107;
-  color: white;
+  background: rgba(0, 122, 255, 0.8); /* systemBlue */
 }
 
+/* Feedback et transitions */
 .feedback-container {
-  margin-top: 20px;
-  text-align: center;
+  margin-top: 25px;
 }
 
 .feedback-message {
@@ -86,32 +82,60 @@ h2 {
 }
 
 .feedback-message.correct {
-  color: #4caf50;
+  color: #34c759;
 }
 
 .feedback-message.incorrect {
-  color: #f44336;
+  color: #ff3b30;
 }
 
 .feedback-explanation {
   margin-top: 10px;
   font-style: italic;
-  color: #555;
+  color: #d1d1d6;
 }
 
+/* Bouton de passage à la question suivante */
 .next-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: #4a90e2;
-  color: white;
+  margin-top: 25px;
+  padding: 14px 30px;
+  background: rgba(0, 122, 255, 0.8);
+  color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 1em;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .next-button:hover {
-  background: #357ab8;
+  background: rgba(10, 132, 255, 0.8);
   transform: scale(1.05);
+}
+
+/* ScoreBoard avec barre de progression */
+.scoreboard {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.scoreboard p {
+  margin: 5px 0;
+  font-size: 1em;
+}
+
+.progress-bar {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 10px auto;
+  width: 80%;
+}
+
+.progress {
+  height: 100%;
+  background: #0a84ff; /* Accent systemBlue */
+  border-radius: 5px;
+  transition: width 0.3s ease;
 }

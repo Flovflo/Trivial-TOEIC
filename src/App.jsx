@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import QuizProvider from './context/QuizContext';
 import QuestionDisplay from './components/QuestionDisplay';
+import ScoreBoard from './components/ScoreBoard';
 
 const App = () => {
   const [questions, setQuestions] = useState([]);
@@ -8,7 +9,7 @@ const App = () => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetch('/questions.json') // Charge le fichier JSON depuis le dossier public
+    fetch('/questions.json')
       .then((res) => {
         if (!res.ok) {
           throw new Error('Failed to load questions');
@@ -38,6 +39,7 @@ const App = () => {
     <QuizProvider questions={questions}>
       <div className="quiz-container">
         <h1>Quiz Application</h1>
+        <ScoreBoard />
         <QuestionDisplay />
       </div>
     </QuizProvider>
