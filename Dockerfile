@@ -1,13 +1,8 @@
 FROM node:16-alpine
-
 WORKDIR /app
-
-# Installer uniquement les dépendances
 COPY package*.json ./
 RUN npm install
-
-# Exposer le port pour le serveur de développement
+COPY . .
 EXPOSE 3000
-
-# Commande par défaut (sera remplacée dans docker-compose.yml)
+EXPOSE 3001
 CMD ["npm", "start"]
