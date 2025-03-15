@@ -1,14 +1,13 @@
 services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  react-app:
+    build: .
     ports:
       - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules  # Empêche le host d'écraser le dossier node_modules
     environment:
       - CHOKIDAR_USEPOLLING=true
-    depends_on:
-      - api
 
   api:
     build:
