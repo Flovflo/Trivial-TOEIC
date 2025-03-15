@@ -1,0 +1,71 @@
+/* Panneau de navigation positionné relativement au conteneur parent */
+.vision-nav-panel {
+    position: absolute;
+    left: -40px;               /* Légère superposition sur la box du quiz */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;               /* Mode compact : uniquement icônes */
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    transition: width 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, border-radius 0.3s ease;
+    overflow: hidden;
+    z-index: 2;
+    /* En mode compact, bords totalement arrondis */
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Mode étendu : agrandissement et changement de forme */
+  .vision-nav-panel.expanded {
+    width: 220px;
+    transform: translate(20px, -50%);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Chaque élément de navigation */
+  .vision-nav-item {
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;  /* Centre l'icône dans le mode compact */
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin: 10px 0;
+  }
+  
+  /* Au survol d'un item, légère translation pour l'interactivité */
+  .vision-nav-item:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateX(5px);
+  }
+  
+  /* Mise en avant de l'item actif */
+  .vision-nav-item.active {
+    background: rgba(255, 255, 255, 0.6);
+    font-weight: bold;
+  }
+  
+  /* Style de l'icône */
+  .vision-nav-item .icon {
+    font-size: 24px;
+  }
+  
+  /* Le label est masqué par défaut (en mode compact) */
+  .vision-nav-item .label {
+    font-size: 16px;
+    margin-left: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* En mode étendu, on affiche progressivement le texte */
+  .vision-nav-panel.expanded .vision-nav-item .label {
+    opacity: 1;
+  }
+  
+  /* Lorsque le panneau est étendu, aligne les items à gauche */
+  .vision-nav-panel.expanded .vision-nav-item {
+    justify-content: flex-start;
+    padding-left: 20px;
+  }

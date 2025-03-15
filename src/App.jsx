@@ -3,6 +3,7 @@ import QuizProvider from './context/QuizContext';
 import QuestionDisplay from './components/QuestionDisplay';
 import ScoreBoard from './components/ScoreBoard';
 import Auth from './components/Auth';
+import VisionNavigationPanel from './components/VisionNavigationPanel';
 import './styles/index.css';
 
 const App = () => {
@@ -48,10 +49,15 @@ const App = () => {
 
   return (
     <QuizProvider questions={questions}>
-      <div className="quiz-container">
-        <h1>Quiz Application</h1>
-        <ScoreBoard />
-        <QuestionDisplay />
+      <div className="app-layout">
+        <div className="quiz-wrapper">
+          <VisionNavigationPanel />
+          <div className="quiz-container">
+            <h1>Quiz Application</h1>
+            <ScoreBoard />
+            <QuestionDisplay />
+          </div>
+        </div>
       </div>
     </QuizProvider>
   );

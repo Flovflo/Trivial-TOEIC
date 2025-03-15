@@ -115,3 +115,18 @@ h2 {
   background: rgba(10, 132, 255, 0.8);
   transform: scale(1.05);
 }
+
+.app-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Conteneur relatif pour positionner le panneau de navigation par-dessus la box du quiz */
+.quiz-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
