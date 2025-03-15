@@ -5,7 +5,7 @@ services:
       - "3000:3000"
     volumes:
       - .:/app
-      - /app/node_modules  # Empêche le host d'écraser le dossier node_modules
+      - /app/node_modules 
     environment:
       - CHOKIDAR_USEPOLLING=true
 
@@ -17,7 +17,7 @@ services:
     ports:
       - "3001:3001"
     environment:
-      - MONGO_URI=mongodb://mongo:27017
+      - MONGO_URI=mongodb://mongo:27017/mydatabase
       - JWT_SECRET=${JWT_SECRET}
     depends_on:
       - mongo
@@ -27,3 +27,5 @@ services:
     ports:
       - "27017:27017"
     command: mongod --port 27017 --bind_ip_all --tlsMode disabled
+    volumes:
+      - ./mongo:/data/db
